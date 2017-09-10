@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .input-group{
+        padding-bottom: 10px;
+    }
+    .input-group-addon{
+        min-width: 150px;
+        text-align: right;
+    }
+    .red-star{
+        color: red;
+    }
+    .description{
+        color: red;
+    }
+</style>
+
+<br>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Фамилия</span>
+  <input type="text" class="form-control" id="input1" aria-describedby="basic-addon3">
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Имя</span>
+  <input type="text" class="form-control" id="input2" aria-describedby="basic-addon3">
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Отчество</span>
+  <input type="text" class="form-control" id="input3" aria-describedby="basic-addon3">
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Организация</span>
+  <input type="text" class="form-control" id="input4" aria-describedby="basic-addon3">
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Должность</span>
+  <input type="text" class="form-control" id="input5" aria-describedby="basic-addon3">
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon3">Адрес организации</span>
+  <input type="text" class="form-control" id="input6" aria-describedby="basic-addon3">
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>E-mail</span>
+  <input type="text" class="form-control" id="input7" aria-describedby="basic-addon3">
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Телефон</span>
+  <input type="text" class="form-control" id="input8" aria-describedby="basic-addon3">
+</div>
+<p class="description">Пожалуйста, заполните поля в приведенной форме регистрации, ответы на вопросы, отмеченные *, являются обязательными.</p>
+<!-- <br> -->
+<button type="button" class="btn btn-success" onclick="SendData()">Отправить</button>
+<script>
+    function SendData(){
+        alert('dffd');
+
+
+
+    }
+</script>
