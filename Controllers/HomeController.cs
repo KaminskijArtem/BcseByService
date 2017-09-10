@@ -15,7 +15,7 @@ namespace BcseByService.Controllers
         string organization, string position, string address,string email,string phone)
         {
 
-
+            //https://stackoverflow.com/questions/32260/sending-email-in-net-through-gmail 
         }
 
         public IActionResult Index()
