@@ -19,45 +19,70 @@
 
 <br>
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Фамилия</span>
-  <input type="text" class="form-control" id="input1" aria-describedby="basic-addon3">
+  <span class="input-group-addon"><span class="red-star">* </span>Фамилия</span>
+  <input onblur="CheckValue(this)" type="text" class="form-control not-empty" id="input1">
 </div>
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Имя</span>
-  <input type="text" class="form-control" id="input2" aria-describedby="basic-addon3">
+  <span class="input-group-addon"><span class="red-star">* </span>Имя</span>
+  <input onblur="CheckValue(this)" type="text" class="form-control not-empty" id="input2">
 </div>
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Отчество</span>
-  <input type="text" class="form-control" id="input3" aria-describedby="basic-addon3">
+  <span class="input-group-addon"><span class="red-star">* </span>Отчество</span>
+  <input onblur="CheckValue(this)" type="text" class="form-control not-empty" id="input3">
 </div>
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Организация</span>
-  <input type="text" class="form-control" id="input4" aria-describedby="basic-addon3">
+  <span class="input-group-addon"><span class="red-star">* </span>Организация</span>
+  <input onblur="CheckValue(this)" type="text" class="form-control not-empty" id="input4">
 </div>
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Должность</span>
-  <input type="text" class="form-control" id="input5" aria-describedby="basic-addon3">
+  <span class="input-group-addon"><span class="red-star">* </span>Должность</span>
+  <input onblur="CheckValue(this)" type="text" class="form-control not-empty" id="input5">
 </div>
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon3">Адрес организации</span>
-  <input type="text" class="form-control" id="input6" aria-describedby="basic-addon3">
+  <span class="input-group-addon">Адрес организации</span>
+  <input type="text" class="form-control" id="input6">
 </div>
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>E-mail</span>
-  <input type="text" class="form-control" id="input7" aria-describedby="basic-addon3">
+  <span class="input-group-addon"><span class="red-star">* </span>E-mail</span>
+  <input onblur="CheckValue(this)" type="text" class="form-control not-empty" id="input7">
 </div>
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon3"><span class="red-star">* </span>Телефон</span>
-  <input type="text" class="form-control" id="input8" aria-describedby="basic-addon3">
+  <span class="input-group-addon"><span class="red-star">* </span>Телефон</span>
+  <input onblur="CheckValue(this)" type="text" class="form-control not-empty" id="input8">
 </div>
 <p class="description">Пожалуйста, заполните поля в приведенной форме регистрации, ответы на вопросы, отмеченные *, являются обязательными.</p>
 <!-- <br> -->
 <button type="button" class="btn btn-success" onclick="SendData()">Отправить</button>
 <script>
+    
     function SendData(){
-        alert('dffd');
+        var domElementsArray = document.getElementsByClassName("not-empty");
+        Array.prototype.forEach.call(domElementsArray, function(el) {
+            CheckValue(el);
+        });
+        var a = SendAjax(domElementsArray);
+    }
 
+    function CheckValue(el){
+        if (el.value == "") {
+                el.style.borderColor = "#FB4D4B";
+            }
+            else{
+                el.style.borderColor = "";
+            }
+    }
 
-
+    function SendAjax(domElementsArray){
+        var x = 0;//return почему-то не работал
+        Array.prototype.forEach.call(domElementsArray, function(el) {
+            if (el.value == "") {
+                x++;
+            }
+        });
+        if(x == 0)
+        {
+            alert("AJAX");
+            
+        }
     }
 </script>
