@@ -10,6 +10,14 @@ namespace BcseByService.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpPost]
+        public void SendEmail(string surname, string name, string patronymic, 
+        string organization, string position, string address,string email,string phone)
+        {
+
+
+        }
+
         public IActionResult Index()
         {
             return View();

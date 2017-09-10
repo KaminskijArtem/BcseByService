@@ -81,8 +81,22 @@
         });
         if(x == 0)
         {
-            alert("AJAX");
-            
+            $.post("http://localhost:5000/Home/SendEmail",
+            { surname: document.getElementById("input1").value,
+            name: document.getElementById("input2").value,
+            patronymic: document.getElementById("input3").value,
+            organization: document.getElementById("input4").value,
+            position: document.getElementById("input5").value,
+            address: document.getElementById("input6").value,
+            email: document.getElementById("input7").value,
+            phone: document.getElementById("input8").value},
+            function(){
+            }).done(function() {
+                alert( "Ваша заявка принята" );
+            })
+            .fail(function() {
+                alert( "Ошибка, проверьте e-mail" );
+            });
         }
     }
 </script>
